@@ -1,0 +1,13 @@
+category:  web
+points:    100
+title:     bibcoin
+description: 
+    <p>Ищи ответ!</p>
+flags:
+  - kettle_siadoidfgfdgfge
+urls:
+  - "https://bibcoin.{hostname}/"
+daemon: app/run_daemon.sh
+daemon_isolate: false
+daemon_socket: "app.sock"
+daemon_socket_type: "http"

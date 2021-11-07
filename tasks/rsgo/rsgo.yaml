@@ -1,0 +1,15 @@
+category:  reverse
+points:    200
+title:     rsgo_task
+description: >
+    <p>Рикардо М. установил себе на компьютер взломанную версию RsGo. Однако, при заходе в приложение, по центру экрана всегда всплывала странная надпись, оставленная взломщиком. Рикардо надоела эта надпись, помогите ему решить эту проблему...  </p>
+attachments_path: attachments
+flags:
+    - kettle_team_7_rsgo_top_739211
+hints:
+    - name: Приложение для работы
+      points: 50
+      text: dnSpy
+    - name: Файл с флагом
+      points: 50
+      text: Assembly-CSharp.dll

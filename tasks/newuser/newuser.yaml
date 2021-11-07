@@ -1,0 +1,15 @@
+category: stegano
+points: 100
+title: newuser
+description: >
+    <p>Модераторы заметили подозрительную активность в профиле человека, который очень любит фотографироваться</p>
+attachments_path: flower
+flags:
+    - kettle_forget_about_stega_you_dont_need_it
+hints:
+    - name: hint0
+      points: 50
+      text: В метаданных может быть что-то
+    - name: hint1
+      points: 25
+      text: У Виженера должен быть ключ

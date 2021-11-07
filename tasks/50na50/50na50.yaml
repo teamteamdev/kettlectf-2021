@@ -1,0 +1,13 @@
+category:  ppc
+points:    150
+title: 50na50
+description: На выходных Витя хотел зайти на свой аккаунт в социальных сетях, но забыл логин и пароль. У его семьи есть папка с логинами и паролями от всех сайтов на которых они когда то регистрировались, но к сожалению утеряны все наименования сайтов и остались просто логины с паролями в хаотичном порядке в разных файлах, помогите Вите автоматизировать процесс переборки логинов и паролей чтобы попасть на сайт.... 
+flags:
+  - kettle_the_wolf_does_not_work_it_will_not_work
+urls:
+  - "https://50na50.{hostname}/"
+attachments_path: attachments
+daemon: 50na50/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

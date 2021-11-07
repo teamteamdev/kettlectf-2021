@@ -1,0 +1,214 @@
+#define neg
+pop a
+sub d d
+sub d a
+push d
+sub d d
+#enddefine
+
+#define div
+pop b
+pop a
+sub c c
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+add c 1
+push a
+neg!
+pop a
+
+aPos:
+jl b "{}bNeg"
+je 0 "{}bPos"
+
+bNeg:
+sub c 1
+push a
+push b
+neg!
+pop b
+pop a
+
+bPos:
+sub d d
+loop:
+je a "{}end"
+jl a "{}end"
+sub a b
+add d 1
+je 0 "{}loop"
+end:
+push d
+je c "{}return"
+neg!
+return:
+#enddefine
+
+#define mul
+pop a
+pop b
+sub c c
+
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+add c 1
+push a
+neg!
+pop a
+
+aPos:
+jl b "{}bNeg"
+je 0 "{}bPos"
+
+bNeg:
+sub c 1
+push a
+push b
+neg!
+pop b
+pop a
+bPos:
+sub d d
+loop:
+je b "{}end"
+sub b 1
+add d a
+je 0 "{}loop"
+end:
+push d
+je c "{}return"
+neg!
+return:
+#enddefine
+
+#define square
+pop a
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+push a
+neg!
+pop a
+
+aPos:
+push a
+push a
+mul!
+#enddefine
+
+#define sqrt
+pop a
+sub d d
+loop:
+push d
+push a
+push d
+square!
+pop b
+pop a
+sub c c
+add c a
+sub c b
+je c "{}end"
+pop d
+add d 1
+je 0 "{}loop"
+end:
+#enddefine
+
+pop c
+pop b
+pop a
+
+je a "aZero"
+push b
+push a
+push c
+push b
+square!
+pop b
+pop c
+pop a
+push a
+push b
+push 4
+push a
+push c
+mul!
+mul!
+pop b
+pop d
+sub d b
+jl d "end2"
+je d "dZero"
+push d
+sqrt!
+pop d
+pop a
+push d
+push a
+push 2
+mul!
+pop a
+pop d
+pop b
+sub c c
+add c d
+sub c b
+push d
+push b
+push a
+push c
+push a
+div!
+pop c
+pop a
+pop b
+pop d
+push c
+sub c c
+sub c d
+sub c b
+push c
+push a
+div!
+je 0 "end"
+dZero:
+push 2
+mul!
+pop c
+neg!
+push c
+div!
+
+je 0 "end"
+
+aZero:
+je b "bZero"
+push c
+neg!
+push b
+div!
+je 0 "end"
+
+bZero:
+je c "cZero"
+je 0 "end"
+
+cZero:
+push 1
+push 2
+push 3
+
+je 0 "end"
+
+end2:
+pop a
+pop b
+
+end:

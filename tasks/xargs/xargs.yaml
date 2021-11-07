@@ -1,0 +1,10 @@
+category:  stegano
+points:    150
+title:     Xargs
+description: >
+    <p>
+    Был изъят зип файл, флаг находится внутри!
+    </p>
+attachments_path: attachments
+flags:
+    - kettle_52o89y_244tf_564

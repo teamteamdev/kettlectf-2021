@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+.autch_block {
+	width: 368px;
+	height: auto;
+	background: #fff;
+	border: solid 5px #f0f0f0;
+	text-align: center;
+	font-family: 'Inter', Light ; 
+	padding: 30px 47px 34px;
+}
+.page-wrap {
+	font-family: 'Inter', Light ; 
+}
+.basecontent-wrap {
+    display: flex;
+    justify-content: center;
+}
+.baseheader-wrap.simple.p-header {
+    display: flex;
+    justify-content: space-around;
+}
+h1.autch_maintext {
+	margin: 0;
+	padding: 0;
+}
+.inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+h5.autch_maintext {
+    margin: 0px;
+    padding: 0px;
+}
+.logo {
+	text-indent: -99999px;
+	width: 150px;
+	background: url("../image/logo.svg") no-repeat;
+}
+.login,
+.password  {
+	border: solid 2px #f0f0f0;
+	width: 273px;
+	height: 48px;
+	margin: 20px;
+}
+input[type="checkbox"] + label {
+    background-image: url(../../../img/flt/theme/check-passive.svg);
+    background-size: 22px 22px;
+    background-position: 0 0;
+}
+.L_check {
+	width: 10px;
+	height: 10px;
+}
+#loginByPwdButton {
+    width: 80%;
+    height: 48px;
+    margin-top: 16px;
+    background: #005398;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    font-family: 'Inter', Light ; 
+}
+.button-big {
+	font-size: 20px;
+}
+.button-small {
+	font-size: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.ne_user {
+    margin: 20px;
+}
+#logout {
+	text-decoration: none;
+	color: #000;
+}

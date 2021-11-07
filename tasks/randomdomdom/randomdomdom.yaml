@@ -1,0 +1,14 @@
+category:  reverse
+points:    150
+title:     RandomDomDom
+description: >
+  What is it? However, we should use it
+flags:
+- kettle_d0mran_743854894
+urls:
+- "https://randomdomdom.{hostname}/"
+attachments_path: attachments
+daemon: randomdomdom/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

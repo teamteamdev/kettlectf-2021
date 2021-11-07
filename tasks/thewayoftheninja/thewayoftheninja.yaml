@@ -1,0 +1,18 @@
+category:  misc
+points:    150
+title:     The way of the ninja
+description: 
+    <p>Что такое гиперопека? Мне кажется родители моей подруги слегка перебарщивают, они считают, что окружающие дети и люди плохо влияют на мою подругу, поэтому они запретили ей иметь аккаунты в соцсетях. Выживать в этих условиях просто нереально, а обсудить наше любимое аниме всё же хочется, так что пришлось заморочится и спрятать своё сообщение. Ps согласны со мной?</p>
+flags:
+  - kettle_ank0rd_1s_the_best
+urls:
+  - "https://thewayoftheninja.{hostname}/"
+daemon: app/run_daemon.sh
+daemon_isolate: false
+daemon_socket: "app.sock"
+daemon_socket_type: "http"
+static_path: static
+hints:
+    - name: Ребус
+      points: 0
+      text: <p>Ребус приведёт вас к флагу. Подсказка к ребусу - <u>Ви</u>н Дизель. Обратите внимание, что не все ресурсы игры используются в ней непосредственно...<p><img src="static/onelove.jpg">

@@ -1,0 +1,11 @@
+category:  stegano
+points:    150
+title:     Путешествие
+description:
+    <p>
+    Абу захотел разослать своим друзьям итоги своего путешествия, но все перепутал и прислал архив. Помоги разобраться, что хотел прислать Абу.
+    </p>
+attachments_path: attachments
+flags:
+    - kettle_samurai_has_no_goal_only_path
+

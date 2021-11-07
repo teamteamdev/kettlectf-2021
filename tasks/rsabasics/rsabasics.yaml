@@ -1,0 +1,26 @@
+category:  crypto
+points:    200
+title:     RSA basics
+description: <p>Умелый программист Абу решил изучить асимметричный алгоритм шифрования RSA. Для этого он нашёл сайт, на котором можно на практике применить свои знания.<br>К сожалению, Абу так и не разобрался, как решать эти задачки.<br>Помогите ему!</p>
+flags:
+  - kettle_rsa_is_not_so_hard_if_you_read_wikipedia_lol
+urls:
+  - "https://rsabasics.{hostname}/"
+daemon: rsabasics/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "rsabasics.sock"
+hints:
+      - name: Challenge 1
+        points: 25
+        text: Numbers are big, so it is good idea to use built-in functions for exponentiation.
+      - name: Challenge 2
+        points: 50
+        text: You have n and p, maybe you can get q and than d?
+      - name: Challenge 3
+        points: 50
+        text: <a href="https://crypto.stackexchange.com/questions/24880/how-multiplicative-property-of-rsa-can-be-exploited">Multiplicative property of RSA</a>
+      - name: Challenge 4
+        points: 25
+        text: You have small n, so can you factorize it?
+        

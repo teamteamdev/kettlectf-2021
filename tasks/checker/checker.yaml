@@ -1,0 +1,13 @@
+category:  reverse
+points:    100
+title:     Flag checker
+description: >
+  Нам удалось получить программу, которая проверяет флаг. Самого флага у нас
+  нет, но может быть вы сможете узнать, какой флаг подходит?
+flags:
+- kettle_4ma0_b1lan_r0ot_0ne
+attachments_path: attachments
+hints:
+- points: 10
+  name: DIS_DIS_DIS
+  text: https://stackoverflow.com/questions/59431770/why-cant-python-dis-module-disassembly-this-pyc-file

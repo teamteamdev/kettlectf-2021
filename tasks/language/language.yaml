@@ -1,0 +1,15 @@
+category:  crypto
+points:    100
+title:     Heptapod-B
+description: >
+    <p>Петя посмотрел фильм Прибытие и ему захотелось создать свой язык Heptapod-B. Он написал для этого программу и зашифровал там свой пароль, но вот незадача, Петя потерял программу которую написал.</p>
+attachments_path: attachments
+flags:
+    - kettle_c1rcle5_0f_h9pt6pod5
+hints:
+    - name: №1
+      points: 50
+      text: Какие бывают параметры у круга?
+    - name: №2
+      points: 50
+      text: Цвета ни на что не влияют.

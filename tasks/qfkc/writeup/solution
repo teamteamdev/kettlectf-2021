@@ -1,0 +1,113 @@
+pop d
+pop a
+save 0 a
+
+sub d 1
+sub c c
+add c 1
+
+compile:
+je a "prerun"
+sub a 1
+pop b
+sub b 7
+jl b "csimplecmd"
+je b "copencmd"
+
+cclosecmd:
+push a
+add d 1
+load d a
+save d 0
+sub b b
+sub b a
+save c b
+sub b b
+sub b c
+save a b
+add c 1
+pop a
+je 0 "compile"
+
+copencmd:
+save d c
+sub d 1
+
+csimplecmd:
+add b 7
+save c b
+add c 1
+je 0 "compile"
+
+prerun:
+sub d d
+add d c
+add d 1
+sub c c
+
+run:
+add c 1
+load c b
+jl b "move"
+je b "end"
+sub b 1
+je b "left"
+sub b 1
+je b "right"
+sub b 1
+je b "inc"
+sub b 1
+je b "dec"
+sub b 1
+je b "out"
+
+in:
+pop a
+save d a
+je 0 "run"
+
+left:
+sub d 1
+je 0 "run"
+
+right:
+add d 1
+je 0 "run"
+
+inc:
+load d a
+add a 1
+save d a
+je 0 "run"
+
+dec:
+load d a
+sub a 1
+save d a
+je 0 "run"
+
+out:
+load d a
+push a
+je 0 "run"
+
+move:
+sub a a
+sub a b
+load d b
+sub a c
+je b "mpzero"
+
+mpnonzero:
+jl a "changeip"
+je 0 "run"
+
+mpzero:
+jl a "run"
+
+changeip:
+add c a
+
+je 0 "run"
+
+end:

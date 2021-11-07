@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <img src="https://psv4.userapi.com/c856228/u195483691/docs/d10/2ecd15e0370e/catjam.gif?extra=lBrB_5ENd14oMsLkyN0W9h1Ldm__jQXTA0xTmTI4TrGSEgBuLBPIAIxicyBe7MFVBIurlLDuHHX6bMI1i7UrbzCG6d2vRJanmCJ19F2V9Tsso7iTRDKgeyGiezz_0H4TctYIcDO8IQk6sZmleTbbzP-4QA">
+    <h1>Авторизация на Веб-сайте</h1>
+    <form action="/login" method="POST">
+        <p>username: <input name="username"></p>
+        <p>password: <input name="password" type="password"></p>
+        <p><input type="submit" value="ok"></p>
+    </form>
+    {% if message %}
+      <div style="background: #f003">
+        <h5>Сообщение от Веб-сайта</h5>
+        <p>{{message}}</p>
+      </div>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{% extends "template_bootstrap.html" %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/autch.css')}}">
+<div class="baseheader-wrap simple p-header">
+    <div class="page-wrap baseheader">
+        <div class="inner">
+            <a href="/ru/" class="logo" title="">
+                Единая&nbsp;система не идентификации&nbsp;и&nbsp;не аутентификации
+            </a>
+            <div class="slogan">
+                Единая система<br> не идентификации и не аутентификации
+            </div>
+        </div>
+    </div><!-- end .baseheader -->
+</div>
+<div class="basecontent-wrap">
+<div class="autch_block">
+	<div class="some_block">
+	<h1 class="autch_maintext">Вход</h1>
+	<h5 class="autch_maintext">Для портала НЕГОСУСЛУГ</h5>
+	</div>
+	<div class="auth_form">
+			<div class="form_excute">
+			<img src="{{url_for('static', filename='image/avatar/')}}{{user.ava}}" style="width: 100px;height: 100px;border-radius: 100%;margin: 20px;" alt="" class="user_back">
+			</div>
+			<h5 class="autch_maintext">Вы являетесь</h5>
+			<h5 class="autch_maintext"><a href="https://vk.com/nobilis_png">{{user.login}}</a>?</h5>
+			<div class="line-btns">
+                                        <button id="loginByPwdButton" type="button" href="../secure/2fa" class="ui-button ui-widget button-big" onclick="get_secure()">
+                                            <span class="ui-button-text">
+                                                Да
+                                            </span>
+                                        </button>
+                                        <div class="ne_user">
+                                        <a id="logout" type="button"  class="ui-button ui-widget button-small" href="/logout">
+                                            <span class="ui-button-text">
+                                                другой пользователь
+                                            </span>
+                                        </a>
+                                        </div>
+                                    </div>
+	</div>
+</div>
+<!--Пароль от админки Admin:MEGaSuper@users-->
+<a style="display: none;" href="/ru/admin">Панель для админа</a>
+</div>
+<script>
+    function get_secure() {
+        return window.location = "../secure/2fa"
+    }
+</script>
+{% endblock %}

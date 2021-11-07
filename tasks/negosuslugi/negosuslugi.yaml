@@ -1,0 +1,21 @@
+category:  web
+points:    100
+title:     negosuslugi.ru
+static_path: attachments
+description: 
+ <h3> Negosuslugi - 2FA или большая ошибка версий КАРЛ. </h3>
+ Привет.Не могу войти в negosuslugi.Уже все испробовал.Наверное это какой-то баг.Оторвать бы руки этому мастеру. Говорят тут недавно выпустили новую версию api.Может быть ошибка связанна с этим.Я уже честно не знаю что делать:(
+ <p align="center" width="100%">
+    <img width="50%" src="static/karl.jpg">
+ </p>
+bullets: 
+ - "Логин:Nobilis"
+ - "пароль:bVZPwaAxEN"
+flags:
+  - kettle_not_the_headline_negosuslugi
+urls:
+  - "https://negosuslugi.{hostname}/ru/"
+daemon: app/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

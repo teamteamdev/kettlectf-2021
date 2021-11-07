@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vasyahack</title>
+  </head>
+  <body>
+    <h1>Problem</h1>
+    Vasya wants program hiw own computer by self. But Vasya know only one
+    programming language &ndash;
+    <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>. He ask you
+    write a intepreter of his favorite language.
+    <h1>Specification</h1>
+    Vasyas computer can work only with numbers, so commands is numbers.
+    <table>
+      <thead>
+        <tr>
+          <td>Brainfuck</td>
+          <td>Vasyahack</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>&gt;</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>.</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>,</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>[</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>]</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+    </table>
+    Input command should pop value from stack, output should push it to stack.
+    Code is stored on stack. Ram size is equal to code size + input size + 128.
+    <h3>Example</h3>
+    <h4>Stack before</h4>
+    <pre>
+1
+5
+3
+6
+3 (top)
+    </pre>
+    <h4>Stack after</h4>
+    <pre>
+2 (top)
+    </pre>
+    <h6>
+      Vasya update his primitive computer with ram, but his computer can run
+      only one rare language. Probably, you dont know it, but Vasya gave
+      <a href="/specs">instruction</a>.
+    </h6>
+    <h1>Submit answer</h1>
+    <form method="POST">
+      <textarea name="code"></textarea>
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

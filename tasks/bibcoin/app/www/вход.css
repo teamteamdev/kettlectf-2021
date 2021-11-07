@@ -1,0 +1,35 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 808px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 312px;
+  height: 312px;
+  background-image: url("images/5f32f69137edd4908374a4f19632ce8b681646fe9ea1d1fa002a2842192f5eb94bec3101a6ceb779e01463866024524c9e9ffc1f7d36f0800aaf5d_1280.png");
+  background-position: 50% 50%;
+  margin: 113px auto 0;
+}
+
+.u-section-1 .u-form-1 {
+  height: 181px;
+  width: 623px;
+  margin: 52px auto 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-1 {
+    width: 570px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-form-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-form-1 {
+    width: 340px;
+  }
+}

@@ -1,0 +1,17 @@
+category:    reverse
+title:       "Cheating multiply"
+points:      150
+description: >
+    <p>Неопытный программист, мало чего смыслящий в безопасности, написал свою игру и разместил ее на сервере.
+    Чтобы получить флаг в его игре необходимо набрать 1000000 валюты.</p>
+bullets:
+  - <code>nc cheatingmultiply.{{ hostname }} 13370</code>
+flags:
+  - kettle_typical_it_earnings_be_like
+daemon: cheatingmultiply/run_daemon.sh
+daemon_isolate: false
+daemon_socket: app.sock
+daemon_socket_type: tcp
+# You need to allocate your ports, so that tasks won't have identical ones.
+daemon_socket_out_port: 13370
+attachments_path: attachments

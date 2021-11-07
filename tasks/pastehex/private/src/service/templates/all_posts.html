@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>pastehex</title>
+    </head>
+    <body>
+        {% if is_admin %}
+            <h2>YOU ARE ADMIN :^)</h2>
+        {% endif %}
+        {% if can_read %}
+            <h2>AND YOU CAN READ FLAG!!!</h2>
+        {% endif %}
+        <p>Posts:</p>
+        {% for post_data in data %}
+            {% if can_read or not post_data[2] %}
+                <p>ID({{ post_data[0] }}): {{ (post_data[1]) }}</p>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>

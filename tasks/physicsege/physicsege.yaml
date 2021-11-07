@@ -1,0 +1,12 @@
+category:  ppc
+points:    150
+title:     ЕГЭ по физике
+description: Министерство образования решило провести эксперемент. Вам как участнику пристоит пройти видоизменнёный тест ЕГЭ по физике. В форму для ответа запишите сумму всех полученных вами ответов
+flags:
+  - kettle_you_are_god_damn_right_b64acdbkjs78hw7ed
+urls:
+  - "https://physicsege.{hostname}/"
+daemon: physicsege/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

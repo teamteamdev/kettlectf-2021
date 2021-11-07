@@ -1,0 +1,20 @@
+category:  misc
+points:    100
+title:     mirror up-down left-right
+description: 
+    <p>Если бы Абу был хоть чуточку аккуратнее и тщательно следил за своей безопасностью в интернете, то, возможно, ему бы не писали ничего странного.Однако как вы могли заметить, 
+    наш герой совершенно не хочет меняться. Сможешь помочь ему разобраться с необычным файлом?
+    "А и ещё, возможно это будет полезно - 712 * 34" - сказали злоумышленники...</p>
+attachments_path: attachments
+flags:
+    - kettle_you_are_so_persistent
+hints:
+    - name: hint
+      points: 25
+      text: Картинки?
+    - name: hint1
+      points: 25
+      text: mirror, then up changes with down, left changes with right
+    - name: hint2
+      points: 25
+      text: 712 * 34, resolution?

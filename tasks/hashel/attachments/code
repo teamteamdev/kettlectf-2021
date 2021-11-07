@@ -1,0 +1,182 @@
+import Browser
+
+import Html exposing (Html, input, div, text, h1, h3)
+import Html.Events exposing (on)
+import Http
+import Bitwise
+
+import Random
+import Json.Decode as Decode
+
+url : Int -> String
+url cnt = "/" ++ (String.fromInt cnt)
+
+magazine t x = case t of
+  0 -> Char.fromCode (x + Char.toCode 'a')
+  1 -> Char.fromCode (x + Char.toCode 'A')
+  2 -> Char.fromCode (x + Char.toCode '0')
+  _ -> ' '
+
+pages cnt = if cnt == 0 then []
+  else List.append (pages (cnt - 1)) [cnt - 1]
+
+trader = String.concat
+  [ (String.join "" [(String.fromList (List.map (magazine 1) (pages 26)))])
+  , (String.join "" [(String.fromList (List.map (magazine 0) (pages 26)))])
+  , (String.join "" [(String.fromList (List.map (magazine 2) (pages 10)))])
+  , "+/"
+  ]
+
+main =
+  Browser.element { init = init
+                  , update = update
+                  , view = view
+                  , subscriptions = subscriptions
+                  }
+
+type Model
+  = Waiting
+  | WaitValidation { magic: (List Int), key: String }
+  | Success String
+
+init : () -> (Model, Cmd Msg)
+init _ =
+  ( Waiting
+  , Cmd.none
+  )
+
+
+prepare magic value = List.map2 (\x y -> remainderBy 256 (x + y)) magic (pounding value)
+
+abb = (*) 1663
+baa = remainderBy 15131
+
+conjure : (List Int) -> (Maybe Int) -> (List Int)
+conjure ingredients knife = case knife of
+  Just k ->
+    case ingredients of
+      (c :: cs) -> let it = abs (c - k) * (c + k) in
+        case conjure cs (Just c) of
+          (d :: ds) -> (baa (abb d + it)) :: d :: ds
+          _ -> [it]
+      _ -> [0]
+  Nothing -> case ingredients of
+    (c :: cs) -> conjure cs (Just c)
+    _ -> []
+
+type Msg
+  = Check (Maybe String)
+  | Validate (Result Http.Error (List Int))
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    Check contents -> case contents of
+      Just value ->
+        ( WaitValidation { magic = (generateSeq (String.length value) rootSeed)
+                         , key = value
+                         }
+        , Http.get { url = url (String.length value)
+                   , expect = Http.expectJson Validate (Decode.list Decode.int)
+                   }
+        )
+      Nothing -> (Waiting, Cmd.none)
+    Validate result -> case result of
+      Ok recipes -> case model of
+        WaitValidation {magic, key} ->
+          let ingredients = prepare magic key
+              mama = List.reverse (conjure (List.reverse ingredients) Nothing)
+          in if
+            (List.length recipes == List.length mama)
+            && (List.all ((/=) False) (List.map2 (==) mama recipes))
+              then
+              ( Success
+                  (String.concat (List.map (\c -> String.fromChar (Char.fromCode c)) ingredients)
+                  ++ "_"
+                  ++ (String.replace "+" "_plus_" (String.replace "/" "_slash_" key)))
+              , Cmd.none
+              )
+          else (Waiting, Cmd.none)
+        _ -> (Waiting, Cmd.none)
+      Err _ -> (Waiting, Cmd.none)
+
+tryMagicKey : String -> String -> Msg
+tryMagicKey key value =
+  if (&&)
+    (key == (String.reverse (String.append (String.fromInt ((ceiling (11 / 4)) + 3)) (String.fromChar (magazine 1 5)))))
+    (not (String.isEmpty (String.trim value)))
+  then Check (Just (String.trim value))
+  else Check Nothing
+
+onMagicKey =
+  on "keyup"
+    (Decode.map2 tryMagicKey
+      (Decode.field "key" Decode.string)
+      (Decode.field "target"
+        (Decode.field "value" Decode.string))
+    )
+
+view : Model -> Html Msg
+view model =
+  case model of
+      Waiting -> div []
+        [ input [ onMagicKey ] []
+        ]
+      WaitValidation _ -> div [] [ text "We are doing some magic..." ]
+      Success flag -> div []
+        [ h1 [] [ text "Yes, you are right!" ]
+        , h3 [] [ text flag ]
+        ]
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model = Sub.none
+
+rootSeed : Random.Seed
+rootSeed = Random.initialSeed (83 // 2 + 43 - (floor 4.5))
+
+generateSeq: Int -> Random.Seed -> (List Int)
+generateSeq len seed =
+  if len == 0
+  then []
+  else
+    let (value, newSeed) = Random.step (Random.int 0 255) seed
+    in value :: (generateSeq (len - 1) newSeed)
+
+
+pounding nana =
+  if (String.length nana) <= 4
+  then case (String.uncons nana) of
+    Just (a, rest) -> case (String.uncons rest) of
+      Just (b, restb) -> case (String.uncons restb) of
+        Just (c, restc) -> case (String.uncons restc) of
+          Just (d, restd) -> pounding_work a b c d
+          Nothing -> pounding_work a b c '-'
+        Nothing -> pounding_work a b '!' '-'
+      Nothing -> []
+    Nothing -> []
+  else List.append (pounding (String.left 4 nana)) (pounding (String.dropLeft 4 nana))
+
+pounder ccccc = List.head
+  (String.indexes
+    (String.fromChar ccccc)
+    trader)
+
+type Rod = Stick (Maybe Int) (Maybe Int) (Maybe Int) (Maybe Int)
+
+pounding_work foo bar zet mur =
+  let
+    ablo = pounder foo
+    blom = pounder bar
+    coin = pounder (Char.fromCode (Char.toCode zet))
+    doom = pounder mur
+  in case (Stick ablo blom coin doom) of
+    Stick (Just a) (Just b) Nothing Nothing -> List.singleton (a * 4 + (b // (2 ^ 4)))
+    Stick (Just a) (Just b) (Just c) Nothing -> List.concat
+      [ (pounding_work foo bar ':' ';')
+      , [((Bitwise.and b 15) * 16 + (c // (2 ^ 2)))]
+      ]
+    Stick (Just a) (Just b) (Just c) (Just d) -> List.append
+      (pounding_work foo bar zet '`')
+      [(Bitwise.and c 3) * (2 ^ 6) + d]
+    _ -> []

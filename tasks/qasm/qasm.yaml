@@ -1,0 +1,14 @@
+category:  ppc
+points:    200
+title:     Quadratic asm?
+description: >
+  Vasya!
+flags:
+- kettle_va39a_wi1l_buy_c0okies_for_u
+urls:
+- "https://qasm.{hostname}/"
+attachments_path: attachments
+daemon: qasm/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

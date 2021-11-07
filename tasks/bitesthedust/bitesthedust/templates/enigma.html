@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Enigma Machine</title>
+	<link rel="icon" type="image/png" href="/static/icons/favicon.ico">
+	<link rel="stylesheet" href="/static/style.css">
+	<script src="/static/jquery/jquery.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="header flex js-sb">
+			<div class="title">
+				<span>Enigma Machine</span>
+			</div>
+			<div class="mode">
+			<form action="#" class="">
+				
+					<label class="mode-radio">Encode
+				  	<input type="radio" checked="checked" name="mode" value="1">
+				  	<span class="checkmark"></span>
+					</label>
+				
+					<label class="mode-radio">Decode
+					  <input type="radio" name="mode" value="2">
+					  <span class="checkmark"></span>
+					</label>
+				
+			</form>
+		</div>
+		</div>
+		
+		
+		<div class="rotors section flex js-sb">
+			<div class="rotor">
+				<p>Set 1 rotor position</p>
+				<select name="rotor1" id="firstRotor" size="3">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+				</select>
+			</div>
+			<div class="rotor">
+				<p>Set 2 rotor position</p>
+				<select name="rotor2" id="secondRotor" size="3">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+				</select>
+			</div>
+			<div class="rotor">
+				<p>Set 3 rotor position</p>
+				<select name="rotor3" id="thirdRotor" size="3">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+				</select>
+			</div>
+		</div>
+		<div class="key section flex js-sb">
+			<div class="half">
+				<button id="remember">Remember</button>
+			</div>
+			<div class="half2 flex"> 
+				<div class="label">Your key is</div>
+				<input type="text" class="key-value" id="key-value" value=" - : - : - ">
+				<div class="copy" id="copy-button"></div>
+			</div>
+			
+		</div>
+		
+		<div class="input section">
+			<p>Your input text</p>
+			<textarea name="" id="inputText" cols="30" rows="5"></textarea>
+		</div>
+
+		<div class="submit section">
+			<button id="process_but">PROCESS</button>
+		</div>
+
+		<div class="output section">
+			<p>Your processed text</p>
+			<div class="output-text" id="output-text"></div>
+		</div>
+
+	</div>
+	<script src="/static/js.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+category:  web
+points:    200
+title:     Pastehex
+description: Абу разработал своё веб-приложение, которое позволяет загружать отрывки текста.<br>Он очень гордится своим проектом, даже выложил его на Github.<br>Недоброжелатели Абу проэксплуатировали XSS и украли сессию админа, но так и не получили доступ к секретной информации. Сможете ли Вы?
+attachments_path: attachments
+flags:
+  - kettle_please_make_sure_that_your_secret_keys_are_safe
+urls:
+  - "https://pastehex.{hostname}/"
+daemon: pastehex/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"
+
+hints:
+    - name: hint
+      points: 25
+      text: Find pastehex by Abu on Github
+    - name: session
+      points: 50
+      text: Maybe you should read about Flask session? (flask.sessions)
+    - name: key
+      points: 75
+      text: Secret key is in the first commit

@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  web:
+    image: "caddy:2-alpine"
+    working_dir: /app
+    volumes:
+      - ".:/app:ro"
+      - "${TMPDIR}:${TMPDIR}"
+      - "${statedir}:${statedir}"
+      - "./Caddyfile:/etc/caddy/Caddyfile:ro"
+    environment:
+      - "TMPDIR=${TMPDIR}"
+networks:
+  default:
+    internal: true

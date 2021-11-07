@@ -1,0 +1,14 @@
+category:     "osint"
+title:        "Very bad login"
+points:       100
+description:  >
+    <p>Неизвестный хакер взломал сайт и поменял вместе с этим логин и пароль. Известно, что для дальнейшей связи с такими же как он сам хакерами, он оставил след.
+    Выйдите на мошенника, добудьте данные для входа и получите флаг.</p>
+flags:
+  - kettle_osintisalwaysonyourside
+urls:
+  - "https://verybadlogin.{hostname}/"
+daemon: services/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

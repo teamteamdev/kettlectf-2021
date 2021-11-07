@@ -1,0 +1,9 @@
+category:  crypto
+points:    100
+title:     Языковой барьер
+description: >
+    <p>Помогите работодателю, который нанял Абу, понять своего нового сотрудника.</p>
+    <img src="static/1.png">
+static_path: static
+flags:
+    - kettle_evening_desert_is_gorgeous

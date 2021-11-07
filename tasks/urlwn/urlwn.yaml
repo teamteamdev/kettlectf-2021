@@ -1,0 +1,14 @@
+category:  pwn
+points:    200
+title:     URLwn
+description: >
+  My friend started a new mega service! But I don't like him. Can you stole
+  something interesing from his service?
+flags:
+- kettle_pwn_1n_url_ohhhh
+daemon: urlwn/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"
+generator: run_generator.sh
+attachments_path: attachments

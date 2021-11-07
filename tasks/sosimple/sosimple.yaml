@@ -1,0 +1,18 @@
+category:  misc
+title:     "Так ли легко?"
+points:    150
+description: >
+    <p>Вы хорошо поработали, отдохните, вот ваш флаг :).</p>
+flags:
+  - kettle_flag_155746387
+urls:
+  - "https://sosimple.{hostname}/"
+daemon: static-website_s/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"
+hints:
+    - name: Первая подсказка
+      points: 50
+      text: в kali можно установить gimp.
+   

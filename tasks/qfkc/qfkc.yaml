@@ -1,0 +1,14 @@
+category:  ppc
+points:    400
+title:     Quad Fkc?
+description: >
+  Vasya! (again?..)
+flags:
+- kettle_va39a_is_sm8rt_b0y
+urls:
+- "https://qfkc.{hostname}/"
+attachments_path: attachments
+daemon: qfkc/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

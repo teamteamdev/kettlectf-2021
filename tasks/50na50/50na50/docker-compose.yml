@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    command: ./start_server.sh "${statedir}" "${TMPDIR}"
+    volumes:
+      - ".:/app:ro"
+      - "${TMPDIR}:${TMPDIR}"
+      - "${statedir}:${statedir}"
+  redis:
+    image: "redis:alpine"
+    volumes:
+      - "${statedir}/redis:/data"
+networks:
+  default:
+    internal: true

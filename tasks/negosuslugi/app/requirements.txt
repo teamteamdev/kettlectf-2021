@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+datetime
+qrcode
+redis
+requests
+flask_login
+Flask-QRcode

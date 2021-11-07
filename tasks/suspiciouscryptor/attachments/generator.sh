@@ -1,0 +1,1 @@
+./enc message.txt $(((RANDOM % 10000) + 1))

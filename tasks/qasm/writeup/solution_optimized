@@ -1,0 +1,198 @@
+#define neg
+pop a
+sub d d
+sub d a
+push d
+sub d d
+#enddefine
+
+#define div
+pop b
+pop a
+sub c c
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+add c 1
+push a
+neg!
+pop a
+
+aPos:
+jl b "{}bNeg"
+je 0 "{}bPos"
+
+bNeg:
+sub c 1
+push a
+push b
+neg!
+pop b
+pop a
+
+bPos:
+sub d d
+loop:
+je a "{}end"
+jl a "{}end"
+sub a b
+add d 1
+je 0 "{}loop"
+end:
+push d
+je c "{}return"
+neg!
+return:
+#enddefine
+
+#define mul
+pop a
+pop b
+sub c c
+
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+add c 1
+push a
+neg!
+pop a
+
+aPos:
+jl b "{}bNeg"
+je 0 "{}bPos"
+
+bNeg:
+sub c 1
+push a
+push b
+neg!
+pop b
+pop a
+bPos:
+sub d d
+loop:
+je b "{}end"
+sub b 1
+add d a
+je 0 "{}loop"
+end:
+push d
+je c "{}return"
+neg!
+return:
+#enddefine
+
+#define square
+pop a
+jl a "{}aNeg"
+je 0 "{}aPos"
+
+aNeg:
+push a
+neg!
+pop a
+
+aPos:
+push a
+push a
+mul!
+#enddefine
+
+#define sqrt
+pop a
+sub d d
+loop:
+je a "{}end"
+sub a d
+sub a d
+sub a 1
+add d 1
+je 0 "{}loop"
+end:
+push d
+#enddefine
+
+pop c
+pop b
+pop a
+
+je a "aZero"
+push b
+add a a
+push a
+push b
+add a a
+push a
+push c
+mul!
+pop b
+pop d
+push b
+push d
+square!
+pop d
+pop b
+sub d b
+jl d "end2"
+je d "dZero"
+push d
+sqrt!
+pop d
+pop a
+pop b
+sub c c
+add c d
+sub c b
+push d
+push b
+push a
+push c
+push a
+div!
+pop c
+pop a
+pop b
+pop d
+push c
+sub c c
+sub c d
+sub c b
+push c
+push a
+div!
+je 0 "end"
+dZero:
+pop c
+neg!
+push c
+div!
+
+je 0 "end"
+
+aZero:
+je b "bZero"
+push c
+neg!
+push b
+div!
+je 0 "end"
+
+bZero:
+je c "cZero"
+je 0 "end"
+
+cZero:
+push 1
+push 2
+push 3
+
+je 0 "end"
+
+end2:
+pop a
+pop b
+
+end:

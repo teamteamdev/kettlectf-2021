@@ -1,0 +1,13 @@
+category:  osint
+points:    150
+title:     Вредоносные программы
+description: >
+    <p>На протяжении недели, Петя следил за подозрительным человеком, который интересовался покупкой вредоносных программ. Он узнал, что вчера этот человек приобрел какую-то программу в телеграмм канале. Петя хочет узнать какая программа была куплена, но не знает как. Может у вас получиться узнать?</p>
+urls:
+    - https://t.me/joinchat/2mrwHXoC42lmNzAy
+flags:
+    - kettle_viruses_are_bad_56k31gg9j3
+daemon: virus/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"

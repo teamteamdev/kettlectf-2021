@@ -1,0 +1,16 @@
+category:  reverse
+points:    150
+title:     davinci code
+description: >
+    <p>The spy of our organization managed to get a part of the server code of the enemy team, will you try to do something with these?</p>
+attachments_path: attachments
+bullets:
+  - <code>nc davincicode.{{ hostname }} 41234</code>
+flags:
+  - kettle_any_obstacle_can_be_overcome_by_perseverance_179348625
+daemon: app/run_daemon.sh
+daemon_isolate: false
+daemon_socket: app.sock
+daemon_socket_type: tcp
+daemon_socket_out_port: 41234
+

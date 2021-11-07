@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Добро пожаловать на Веб-сайт!</h1>
+    {% if not username %}
+      <h2><a href="/login"> Выполните вход для получения флага </a></h2>
+    {% else %}
+    	<h2> kettle_the_wolf_does_not_work_it_will_not_work вот твой флаг UWU ^^ <code>{{username}}</code>:</h2>
+      <h6 style="margin-top: -1.75em">Если вы не {{username}}, вы <a href="/logout">выйдите</a>, ок?</h6>
+    {% endif %}
+  </body>
+</html>

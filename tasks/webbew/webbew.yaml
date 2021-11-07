@@ -1,0 +1,16 @@
+category:  web
+points:    200
+title:     webbew
+description: >
+  <p>
+    На сайте проходит конкурс лучших фотографий 2021. Но выяснилось, что при заходе на него хакер крадет данные пользователей. Выясните как он это делает и украдите его данные в ответ!
+  </p>
+generator: run_generator.sh
+attachments_path: attachments
+flags:
+  - kettle_dont_trust_information_from_users
+daemon: webbew/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"
+hidden: false

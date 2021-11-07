@@ -1,0 +1,13 @@
+category:  misc
+points:    100
+title:     Another Bites the Dust
+description: в этом задании вам придется расшифровать сообщение, но что-бы это сделать вам нужно пройти некоторые испытания(символ X в флаге заменяет символ _)
+flags:
+  - kettle_a_ti_dumal_prosto_budet
+urls:
+  - "https://bitesthedust.{hostname}/"
+daemon: bitesthedust/run_daemon.sh
+daemon_isolate: false
+daemon_socket_type: "http"
+daemon_socket: "app.sock"
+attachments_path: attachments

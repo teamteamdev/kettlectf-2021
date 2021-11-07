@@ -1,0 +1,32 @@
+<h1>Hi!</h1>
+
+<p>You can insert a picture here:</p>
+<form action='{{ url_for('image', userKey=userKey) }}' enctype='multipart/form-data' method='post' id='myImgForm'>
+    <p><input type='file' name='img'>
+    <input type="submit" value="Send" style='background:#008000; color:white;'></p>
+</form>
+{% if message %}
+    <p>{{message}}</p>
+{% endif %}
+{% if imgSrc %}
+    <p>
+        <img src={{imgSrc}} width="250em" height="250em">
+        <form action='{{ url_for('delImg', userKey=userKey) }}' id='myDeleteForm', method='post'>
+            <button type='submit' style='background:#c70000; color:white;'>Delete picture</button>
+        </form>
+    </p>
+    <h3>Comments:</h3>
+    {% if not comment %}
+        <em>No comments...</em>
+    {% else %}
+        <div class="comment" style="background: #9901; padding: 2px 10px; margin: 5px;">
+        <p>{{comment}}</p>
+        </div>
+    {% endif %}
+
+    <h3>Your comment:</h3>
+        <form action='{{ url_for('comment', userKey=userKey) }}' method='post' id='myCommentForm'>
+            <p><textarea  name = 'comment' style='width:21em; height: 12em;'></textarea></p>
+            <input type="submit" value="Post comment" id='submitcomment'></p>
+        </form>
+{% endif %}

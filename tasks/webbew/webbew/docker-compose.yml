@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  web:
+    build: server
+    command: ./start_server.sh "${statedir}" "${TMPDIR}"
+    volumes:
+      - "./server:/app:ro"
+      - "${TMPDIR}:${TMPDIR}"
+      - "${statedir}:${statedir}"
+  bot:
+    build: bot
+    command: ./start_server.sh "${statedir}" "${TMPDIR}"
+    volumes:
+      - "./bot:/app:ro"
+      - "${TMPDIR}:${TMPDIR}"
+      - "${statedir}:${statedir}"
+networks:
+  default:
+    internal: false

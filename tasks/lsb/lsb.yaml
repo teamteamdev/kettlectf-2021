@@ -1,0 +1,17 @@
+category:  stegano
+points:    200
+title:     Странная картинка
+description: >
+  <p>
+  На почту вашей организации пришла странная картинка, также к ней было приложено сообщение которое содержало в себе следующие строки: <br>
+  </p><p> <big>"<i>Не прекращу. Не уйду. Я не сдамся!   - <b>Юно Гринбэриал</i></b></big>"
+  <img src="static/blackc.png"></p>
+  
+static_path: static
+flags:
+  - kettle_sorry_for_this_but_i_need_to_make_this_task_more_difficult
+hints:
+  - name: Подсказка
+    points: 100
+    text: "Hallucinate.jar"
+

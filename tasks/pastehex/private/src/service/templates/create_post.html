@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>pastehex</title>
+    </head>
+    <body>
+        <p>Create post:</p>
+        <form method="POST" action="">
+            {{ form.csrf_token }}
+            {% for field in form if field.name != 'csrf_token' %}
+            {{ field.label() }}
+            {{ field() }}
+            {% for error in field.errors %}
+                <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </form>
+    </body>
+</html>

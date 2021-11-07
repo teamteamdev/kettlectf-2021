@@ -1,0 +1,13 @@
+from decode import decode
+
+n = ... 
+e = ...
+p = ...
+c = ...
+
+q = n // p
+phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)
+m = pow(c, d, n)
+
+print(decode(m))

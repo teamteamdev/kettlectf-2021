@@ -1,0 +1,59 @@
+{% extends "template_bootstrap.html" %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/autch.css')}}">
+<div class="baseheader-wrap simple p-header">
+    <div class="page-wrap baseheader">
+        <div class="inner">
+            <a href="/ru/" class="logo" title="">
+                Единая&nbsp;система не идентификации&nbsp;и&nbsp;не аутентификации
+            </a>
+            <div class="slogan">
+                Единая система<br> не идентификации и не аутентификации
+            </div>
+        </div>
+    </div><!-- end .baseheader -->
+</div>
+<div class="basecontent-wrap">
+<div class="autch_block">
+	<div class="some_block">
+	<h1 class="autch_maintext">Вход</h1>
+	<h5 class="autch_maintext">Для портала НЕГОСУСЛУГ</h5>
+
+	</div>
+	<div class="auth_form">
+			<div class="form_excute">
+					<h5 class="autch_maintext">Слишком подозрительная активность потвердите аккаунт</h5>
+					<img src="{{img_secure}}" alt="" style="margin: 20px;">
+					<input type="number" name="2fa" style="font-size: 50px;" min="0"   class="login" name="2fa" placeholder="" >
+					<h5 class="autch_maintext">Введите код с приложения</h5>
+			</div>
+			<h1 class="autch_maintext" id="error_Data">{{error}}</h1>
+			<div class="line-btns">
+                                        <button id="loginByPwdButton" onclick="send_2fa()" type="submit" class="ui-button ui-widget button-big" data-bind="click: loginByPwd">
+                                            <span class="ui-button-text">
+                                                Потвердить
+                                            </span>
+                                        </button>
+                                        <br>
+                                        <a href="/logout" class="logout">Выйти</a>
+                                    </div>
+		<script>
+			function send_2fa() {
+			$.ajax({
+	url: '/api/v2/secure/2fa',         
+	method: 'get',             
+	dataType: 'html',         
+	data: {code: $('.login').val()},     
+	success: function(data){   
+		$("#error_Data").html(data);
+		console.log(data);           
+	}
+});
+			}
+		</script>
+	</div>
+</div>
+<!--Пароль от админки Admin:MEGaSuper@users-->
+<a style="display: none;" href="/admin">Панель для админа</a>
+</div>
+{% endblock %}

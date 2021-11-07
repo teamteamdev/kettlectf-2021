@@ -1,0 +1,22 @@
+category:  ppc
+points:    100
+title:     Птички
+description:
+    <p>
+    Наш программист Абу забыл пароль от сайта компании :^(<br>
+    В целях безопасности в базе данных хранятся sha256-хэши паролей.<br>
+    Эти данные были предоставленны.<br>
+    Также Абу скинул нам скрипт генерации паролей. 
+    Помогите ему восстановить пароль!<br>
+    P.S. Абу очень любит птичек, он знает около 600 видов
+    </p>
+attachments_path: attachments
+flags:
+    - kettle_hoatzin_abu_1337_pr0g3r_illadopsis_aa
+hints:
+    - name: птички
+      points: 25
+      text: <a href="https://gist.githubusercontent.com/jason-kane/a12aba88f84cf84906344f5fac6b33b7/raw/254be1138841f3936ffc25388381070d6bf341b1/list_of_birds.txt">Птички</a>
+    - name: hint
+      points: 50
+      text: just brute

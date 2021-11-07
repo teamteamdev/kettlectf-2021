@@ -1,0 +1,15 @@
+category:  crypto
+points:    150
+title:     Записка с ракушками
+description: >
+    <p>Петя нашел на пляже сундук с «кладом», в котором лежали письмо, а также интересная ракушка, но как же расшифровать, что написано в письме?</p>
+attachments_path: attachments
+flags:
+    - kettle_golden_spiral
+hints:
+    - name: №1
+      points: 50
+      text: Числа Фибоначчи
+    - name: №2
+      points: 50
+      text: 1 - a, 2 - b, 3 - c, 5 - d
