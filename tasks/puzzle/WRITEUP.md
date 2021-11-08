@@ -2,9 +2,9 @@
 
 1. Скачиваем файл `puzzle.jpg`
 
-2. Воспользуемся утилитой с GitHub'а `https://github.com/nemanja-m/gaps`
+2. Воспользуемся утилитой: https://github.com/nemanja-m/gaps
 
-  <img src="img\puzzle.jpg" width=50%>
+  <img src="private/img/puzzle.jpg" width=50%>
 
 4. Используем команду:
 
@@ -12,7 +12,7 @@
 
 И получаем это:
 
-  <img src="img\flag.jpg" width=50%>
+  <img src="private/img/flag.jpg" width=50%>
 
 6. Отзеркалим и получим флаг.
 
