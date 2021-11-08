@@ -5,7 +5,7 @@
 ## Таски
 
 [Flag checker](tasks/checker/) (reverse 100)  
-[simlar to crypto, but...](tasks/enccc/) (reverse 150)  
+[similar to crypto, but...](tasks/enccc/) (reverse 150)  
 [esabXX](tasks/esabxx/) (crypto 150)  
 [Hashel](tasks/hashel/) (reverse 300)  
 [Leaker](tasks/leaker/) (reverse 300)  
