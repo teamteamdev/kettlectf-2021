@@ -30,7 +30,7 @@
 
 [Опасная организация...](tasks/globalsecurity/) (reverse 250)  
 [Странная картинка](tasks/lsb/) (stegano 200)  
-[Коммерческая тайна...](tasks/somekindoframe/) (misc 200)  
+[Коммерческая тайна...](tasks/somekindofgame/) (misc 200)  
 [webbew](tasks/webbew/) (web 200)
 
 [Птички](tasks/birds/) (ppc 100)  
